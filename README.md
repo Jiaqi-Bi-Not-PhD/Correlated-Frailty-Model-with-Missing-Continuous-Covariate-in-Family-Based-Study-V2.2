@@ -27,10 +27,10 @@ replicates.
 The scenario grid uses:
 
 - 498 generated families;
-- frailty variances \(\sigma_u^2\in\{0.2,0.5\}\);
+- frailty variances $\sigma_u^2\in\{0.2,0.5\}$;
 - continuous-PRS missingness rates of 20%, 50%, and 80%;
 - true parameters
-  \((\log\rho,\log\lambda,\beta_b,\beta_c)=(0.804,4.71,2.2,1.0)\);
+  $(\log\rho,\log\lambda,\beta_b,\beta_c)=(0.804,4.71,2.2,1.0)$;
 - PRS variance 0.1;
 - 10 PDMI iterations and 20 retained PDMI imputations;
 - 20 MI-SMCFCS imputations.
