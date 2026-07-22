@@ -1,0 +1,52 @@
+# Local R and IDE state
+.DS_Store
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.positai/
+.R-library/
+*.Rproj
+
+# Generated simulation output
+/reproduced-results/
+/results/
+code/pdmi-v2.2/Results/
+code/comparators-may23/Results/
+code/pdmi-v2.2/logs/
+code/comparators-may23/logs/
+code/pdmi-v2.2/r_libs_4.5/
+code/comparators-may23/r_libs_4.5/
+
+# Material outside the R-script-only GitHub release
+/manuscript/
+/dependencies/
+/GITHUB_PUBLICATION_MANIFEST.md
+/PROVENANCE.md
+/RELEASE_CHECKLIST.md
+/scripts/run_validation.sh
+code/*/cluster_jobs/
+code/*/docs/
+
+# Cases and legacy methods outside the continuous-covariate release
+code/pdmi-v2.2/Shared/joint_missingness.R
+code/pdmi-v2.2/Shared/pdmi_binary.R
+code/pdmi-v2.2/Shared/pdmi_core.R
+code/pdmi-v2.2/Shared/pdmi_joint.R
+code/pdmi-v2.2/Shared/smcfcs_comparator.R
+code/comparators-may23/Shared/joint_missing_future_work.R
+code/comparators-may23/Shared/mi_congenial_binary.R
+code/comparators-may23/Shared/mi_congenial_continuous.R
+code/comparators-may23/Misc/kinship_cholesky_overrides.R
+
+# Superseded, diagnostic, or manuscript-output R scripts
+code/pdmi-v2.2/Misc/install_frailtypack_213.R
+code/pdmi-v2.2/Misc/run_v22_failure_diagnostic.R
+code/pdmi-v2.2/Misc/smoke_pdmi.R
+code/pdmi-v2.2/Misc/summarize_pdmi_diagnostic_audit.R
+code/pdmi-v2.2/Misc/make_v22_combined_penetrance_figures.R
+code/pdmi-v2.2/Misc/make_v22_manuscript_latex_tables.R
+code/pdmi-v2.2/Misc/make_v22_organized_latex_tables.R
+code/pdmi-v2.2/Misc/organize_v22_pdmi_outputs.R
+code/comparators-may23/Misc/make_may10_combined_summary_tables_split.R
+code/comparators-may23/Misc/make_may11_combined_latex_tables.R
