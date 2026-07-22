@@ -1,12 +1,12 @@
 # Continuous-covariate correlated-frailty simulations
 
 This repository contains the R code needed to reproduce the synthetic
-continuous-covariate simulation study in *Correlated Frailty Model with Missing
+continuous covariate simulation study in *Correlated Frailty Model with Missing
 Continuous Covariate in Family-Based Study*.
 
 The publication scope is limited to the case in which the continuous polygenic
-risk score (PRS) is missing. It includes the corresponding full-data benchmark,
-continuous-case complete-case analysis (CCA), continuous-case MI-SMCFCS,
+risk score (PRS) is missing. It includes the corresponding full data benchmark,
+continuous case complete case analysis (CCA), continuous-case MI-SMCFCS,
 C-O-PDMI, and C-R-PDMI. 
 
 Reviewers generate all results locally with the R scripts described below.
@@ -93,11 +93,6 @@ reason.
 └── README.md
 ```
 
-Only the files shown above, the R helper files below the two `dependencies/`
-directories, and the two repository-level documentation/control files are
-part of the GitHub publication set. Dedicated binary-missingness, joint-
-missingness, legacy MI-Cong, cluster, and Slurm modules are excluded.
-
 ## R dependencies
 
 The code was developed with R 4.5.0 and later validated with R 4.5.3. The two
@@ -116,19 +111,20 @@ The scripts also use:
 - `truncnorm`.
 
 Their required transitive dependencies are installed automatically by R.
-Installing `frailtypack` may require C, C++, and Fortran compilers together
+**Installing `frailtypack` may require C, C++, and Fortran compilers together
 with BLAS and LAPACK development libraries. Please contact the maintainer of `frailtypack`
-for any download specifications. You may find the following link useful: 
+for any download specifications. You may find the following link useful**: 
 https://cran.r-project.org/web/packages/frailtypack/index.html.
 
 Parallel execution is controlled by `SIM_CORES`. On Windows, the scripts use
 one core because `parallel::mclapply()` does not provide multicore execution
-there.
+there. I strongly recommend users to run simulations in MacOS/Linux environment instead of Windows. 
+It may take years to complete the simulation if you use Windows. 
 
 ## Step 1: obtain the code
 
 Download or clone the repository, open a terminal, and change to the repository
-root—the directory containing this `README.md`.
+root, the directory containing this `README.md`.
 
 Multi-line commands below use the macOS/Linux continuation character `\` for
 readability. In Windows PowerShell, enter the same command and options on one
@@ -136,7 +132,7 @@ line.
 
 ## Step 2: install the R packages
 
-The following creates a project-local R library and installs missing packages
+The following creates a project local R library and installs missing packages
 from CRAN:
 
 ```bash
@@ -163,7 +159,7 @@ Run the structural and configuration check:
 Rscript scripts/validate_repository.R
 ```
 
-To require all packages and the two tested method-critical versions:
+To require all packages and the two tested method critical versions:
 
 ```bash
 Rscript scripts/validate_repository.R --strict-packages
@@ -182,9 +178,9 @@ Rscript code/comparators-may23/Misc/check_source_all.R
 
 ## Step 4: run the full simulations
 
-The full study is computationally expensive. Run the three components
+**The full study is computationally expensive. Run the three components
 separately so that progress and failures are easy to inspect. Replace
-`--cores=4` with a suitable number for the computer being used.
+`--cores=4` with a suitable number for the computer being used.**
 
 ### 4a. No-missing benchmark
 
@@ -246,7 +242,7 @@ reproduced-results/
 └── pdmi/
 ```
 
-Each component has a run-label directory containing one RDS file per replicate.
+Each component has a run label directory containing one RDS file per replicate.
 After all scenario cells for a component finish, the driver automatically runs
 the corresponding `Misc/summarize_results.R` script. Its `summary_tables/`
 directory includes:
@@ -254,7 +250,7 @@ directory includes:
 - parameter estimates and performance summaries;
 - penetrance estimates and performance summaries;
 - convergence and failure diagnostics;
-- manuscript-oriented summary tables.
+- manuscript-ready summary tables.
 
 Penetrance figures are written under the same run-label directory. All
 generated output is excluded from version control.
