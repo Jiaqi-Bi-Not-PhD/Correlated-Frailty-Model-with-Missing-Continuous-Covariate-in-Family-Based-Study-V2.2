@@ -99,12 +99,11 @@ reason.
 │   ├── validate_repository.R
 │   └── run_simulation_grid.R
 ├── .gitignore
-├── README.md
-└── THIRD_PARTY_NOTICES.md
+└── README.md
 ```
 
 Only the files shown above, the R helper files below the two `dependencies/`
-directories, and the three repository-level documentation/control files are
+directories, and the two repository-level documentation/control files are
 part of the GitHub publication set. Dedicated binary-missingness, joint-
 missingness, legacy MI-Cong, cluster, and Slurm modules are excluded.
 
@@ -296,18 +295,3 @@ Rscript scripts/run_simulation_grid.R \
 | `--dry-run` | print planned R calls without running them | `false` |
 
 Arguments must use the `--name=value` form shown above.
-
-## Interpreting failures
-
-The attempted count is 1,000 per cell, but the analyzed count is the number of
-successful fits. Summary estimates, empirical standard errors, Monte Carlo
-standard errors, and coverage are computed from method-specific successful
-replicates. Reviewers should inspect `convergence_diagnostic_summary.csv` and
-must not report 1,000 as the analyzed count when failures occurred.
-
-## Release and reuse
-
-No simulation result is distributed in this repository. Before public release,
-the repository owner must select a license and resolve the redistribution
-status of the FamEvent-derived R helpers described in
-`THIRD_PARTY_NOTICES.md`.
