@@ -110,7 +110,7 @@ missingness, legacy MI-Cong, cluster, and Slurm modules are excluded.
 ## R dependencies
 
 The code was developed with R 4.5.0 and later validated with R 4.5.3. The two
-method-critical package versions were:
+critical package versions were:
 
 - `frailtypack` 2.13;
 - `smcfcs` 2.0.2.
@@ -126,7 +126,9 @@ The scripts also use:
 
 Their required transitive dependencies are installed automatically by R.
 Installing `frailtypack` may require C, C++, and Fortran compilers together
-with BLAS and LAPACK development libraries.
+with BLAS and LAPACK development libraries. Please contact the maintainer of `frailtypack`
+for any download specifications. You may find the following link useful: 
+https://cran.r-project.org/web/packages/frailtypack/index.html.
 
 Parallel execution is controlled by `SIM_CORES`. On Windows, the scripts use
 one core because `parallel::mclapply()` does not provide multicore execution
