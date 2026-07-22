@@ -188,33 +188,13 @@ Rscript code/pdmi-v2.2/Misc/test_pdmi_diagnostics.R
 Rscript code/comparators-may23/Misc/check_source_all.R
 ```
 
-## Step 4: make a small test run
-
-Before starting 1,000-replicate runs, test the continuous V2.2 PDMI workflow
-with one replicate, 40 families, and one core. This command runs all 12
-continuous PDMI scenario-method cells and then creates summary files:
-
-```bash
-Rscript scripts/run_simulation_grid.R \
-  --component=pdmi \
-  --n=1 \
-  --families=40 \
-  --cores=1 \
-  --m-pdmi=2 \
-  --pdmi-numit=2 \
-  --maxit=20 \
-  --run-prefix=smoke
-```
-
-This is a plumbing check, not a scientific reproduction.
-
-## Step 5: run the full simulations
+## Step 4: run the full simulations
 
 The full study is computationally expensive. Run the three components
 separately so that progress and failures are easy to inspect. Replace
 `--cores=4` with a suitable number for the computer being used.
 
-### 5a. No-missing benchmark
+### 4a. No-missing benchmark
 
 This runs 1,000 replicates for each of the two frailty variances:
 
@@ -227,7 +207,7 @@ Rscript scripts/run_simulation_grid.R \
   --run-prefix=reviewer
 ```
 
-### 5b. CCA and MI-SMCFCS
+### 4b. CCA and MI-SMCFCS
 
 This runs CCA and MI-SMCFCS for all six combinations of frailty variance and
 missingness rate. MI-SMCFCS uses 20 imputations:
@@ -242,7 +222,7 @@ Rscript scripts/run_simulation_grid.R \
   --run-prefix=reviewer
 ```
 
-### 5c. C-O-PDMI and C-R-PDMI
+### 4c. C-O-PDMI and C-R-PDMI
 
 This runs both V2.2 PDMI methods for all six combinations of frailty variance
 and missingness rate. Each cell uses 20 imputations and 10 PDMI iterations:
@@ -263,7 +243,7 @@ computations use the requested number of cores. Existing replicate files are
 skipped, so rerunning the same command resumes an interrupted run. Add
 `--force=true` only when results should be recomputed deliberately.
 
-## Step 6: find and inspect the outputs
+## Step 5: find and inspect the outputs
 
 By default, locally generated files are written below:
 
