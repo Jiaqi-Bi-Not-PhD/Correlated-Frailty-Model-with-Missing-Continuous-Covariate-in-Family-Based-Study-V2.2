@@ -7,17 +7,8 @@ Continuous Covariate in Family-Based Study*.
 The publication scope is limited to the case in which the continuous polygenic
 risk score (PRS) is missing. It includes the corresponding full-data benchmark,
 continuous-case complete-case analysis (CCA), continuous-case MI-SMCFCS,
-C-O-PDMI, and C-R-PDMI. It does **not** publish a missing-binary-covariate case
-or a jointly missing continuous-and-binary-covariate case.
+C-O-PDMI, and C-R-PDMI. 
 
-The model still contains the fully observed binary genetic covariate `mgene`;
-code that generates and analyzes that predictor is therefore required by the
-continuous-PRS study. Its presence does not represent a binary-missingness
-simulation.
-
-This is an R-script-only release. It does not include simulation results,
-Slurm or other cluster jobs, shell submission scripts, manuscript files,
-figures, local software libraries, or machine-specific execution files.
 Reviewers generate all results locally with the R scripts described below.
 
 ## Simulation grid
